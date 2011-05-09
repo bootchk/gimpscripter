@@ -2,9 +2,9 @@ Announcing a new version of the "Make Shortcut" plugin, now called "GimpScripter
 
 Gimpscripter is a Gimp plugin written in Python.  It generates Python code for a plugin.
 
-The source is at github.com/bootchk/gimpscripter.  Installation instruction are in the README file.  The source includes many readable documents such as NEWS, TODO, and a usermanual.
+The source is at github.com/bootchk/gimpscripter.  Installation instruction are in the README file.  The source includes many readable documents such as NEWS, TODO, and a user's manual.
 
-Gimpscripter is still in development.  It works usually, but is incomplete and could be improved.
+Gimpscripter is still in development.  It usually works, but is incomplete and could be improved.
 
 Take a look if you are interested in scripting Gimp, as a user or as a programmer.
 
@@ -18,6 +18,21 @@ Some people suggest using a recorder/playback tool to automate Gimp.  Scripts fr
 
 Gimpscripter does have many weaknesses, some of which can be attributed to lack of support from the PDB.  So it could help guide improvements to the PDB (but it might not raise any issues not already known, such as not storing defaults.)
 
-I would welcome comments or contributions.
+I welcome comments or contributions.
+
+Here is an example use, to make a plugin "Stroke selection with  selection":
+
+Choose "Filter/Gimpscripter" to start Gimpscripter.
+From the menu pane choose "Edit/Copy".
+Choose "Edit/Paste as/New Brush".
+Choose "Select/To path".
+Choose "Edit/Stroke/Path".
+Enter a name for the plugin, for example "Stroke selection with selection".
+Choose the OK button.
+Read the summary and choose the OK button.
+Restart Gimp.
+Open an image and make a selection.
+Choose "Shortcuts/Stroke selection with selection".
+You should see a mobius like effect.
 
 

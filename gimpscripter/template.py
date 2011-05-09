@@ -85,17 +85,17 @@ Template for the summary.
 '''
 summarytemplate = Template(
 r'''
-  Created wrapper plugin $wrappingmenupath.
+Created wrapper plugin: $wrappingmenupath.
   
-  Its description is: $wrappingblurb
+Its description is: $wrappingblurb
   
-  The wrapper plugin requires an image of any mode to be open.
+It requires an open image of mode: any.
   
-  To change the wrapper plugin later, create a wrapper plugin with the same name.
+To change the wrapper plugin later, create a wrapper plugin with the same name.
   
-  To remove the wrapper plugin, delete the file: $filepath. To distribute the wrapper plugin, distribute the same file.
+To remove the wrapper plugin, delete the file: $filepath. To distribute the wrapper plugin, distribute the same file.
   
-  The wrapper plugin will not appear in Gimp menus until you restart Gimp.
+The wrapper plugin will appear in Gimp menus after you restart Gimp.
 '''
 )
 
