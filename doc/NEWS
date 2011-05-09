@@ -1,7 +1,7 @@
 NEWS
 ====
 
-This is the new version of the "Make Shortcut" plugin.  It is now called "Gimpscripter."  It lets you point-and-click to create a plugin that calls a sequence of other plugins or PDB procedures or macros (common sequences of calls.)
+This is the new version of the "Make Shortcut" plugin for Gimp.  It is now called "Gimpscripter."  It lets you point-and-click to create a plugin that calls a sequence of other plugins or PDB procedures or macros (common sequences of calls.)
 
 The differences from the prior version:
 

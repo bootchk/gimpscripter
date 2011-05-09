@@ -1,13 +1,24 @@
-#! /usr/bin/python
-
 '''
-
-lloyd konneker 2010
-
 Derived from gimpfu.py.
 Here I broke out the widgets for entering parameters to Gimp plugins.
 They were hidden inside interact().
 More are in gimpui.py, see the mapping below.
+
+Copyright 2010  Lloyd Konneker
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 '''
 
 from gimp import locale_directory

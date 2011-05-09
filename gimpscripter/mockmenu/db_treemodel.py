@@ -7,6 +7,22 @@ IE how to load a gtk.treemodel from the db according to the viewspec for an insp
 Similar to classical views on a database: different ways of organizing, viewing the same data.
 
 The viewspec tells which attributes of objects in the db are paths, types, categories (sets of types).
+
+Copyright 2010  Lloyd Konneker
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 '''
 
 # Does not need: from gimpfu import * 
