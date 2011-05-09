@@ -1,0 +1,8 @@
+Installation
+============
+
+Instructions for typical installation on Linux, with Gimp version 2.6:
+
+  cp plugin-gimpscripter.py ~/.gimp-2.6/plug-ins (user's local directory)
+  chmod +x ~/.gimp-2.6/plug-ins/plugin-gimpscripter.py (make it executable)
+  cp -r gimpscripter ~/.gimp-2.6/plug-ins (copy gimpscripter directory comprising .glade and .py files)

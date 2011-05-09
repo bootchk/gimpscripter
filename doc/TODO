@@ -1,0 +1,23 @@
+TODO
+====
+
+Here are some of the deficiencies:
+
+- defaults for settings are lame (because the PDB does not keep them)
+- range checking for settings is non-existent (because the PDB does not keep them)
+- mock menu items are missing (file map_procedures.py is incomplete)
+- macros are missing (file macros.py is incomplete)
+- the GUI could be more user friendly
+- the look and feel should match the Gimp style and might need to use the user's theme
+- should allow user to insert and remove commands from a sequence
+- should allow user to enter the blurb for a wrapper plugin
+- lightly tested.  Testing should be automated.
+- let user choose a menu for the wrapper, not just "Shortcut>"
+- check the return value of wrapped procedures and raise, if error returns can be determined
+- substitute our own blurb for mockmenu items that have new semantics via the GS stack model
+
+These are some Gimp quirks that macros address, and that might go away:
+- the floating selection
+- creating layers that are not attached to an image
+- inconvenient (for users) parameter units, such as pixels instead of percent for scaling
+- declared type of parameters for many procedures is too generic, e.g. string for brush

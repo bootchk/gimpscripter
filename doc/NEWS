@@ -1,0 +1,20 @@
+NEWS
+====
+
+This is the new version of the "Make Shortcut" plugin.  It is now called "Gimpscripter."  It lets you point-and-click to create a plugin that calls a sequence of other plugins or PDB procedures or macros (common sequences of calls.)
+
+The differences from the prior version:
+
+- a sequence of calls instead of just one call
+- call any PDB procedure, not just plugins
+- call macros that more closely match Gimp menu semantics than the PDB does 
+  (e.g. Channel/New, which also attaches the channel)
+- call macros for common sequences (e.g. Display/New, also flushes)
+- call macros that better define parameter types (e.g. Context/Set/Choose brush)
+- lets you enter parameters for the called procedures
+- OR lets you defer parameters for called procedures until runtime
+
+See the TODO file for deficiencies.
+
+
+

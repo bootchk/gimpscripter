@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
+<title>GimpScripter User's Manual</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5951 2009-05-18 18:03:10Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left{
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: left }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="gimpscripter-user-s-manual">
+<h1 class="title">GimpScripter User's Manual</h1>
+
+<p>Copyright 2010, 2011 Lloyd Konneker.
+This is part of the GimpScripter User's Manual.
+It is licensed under the GNU Free Documentation License, Version 1.3, 3 November 2008.
+See the file COPYING for copying conditions.</p>
+<div class="section" id="about-gimpscripter">
+<h1>About GimpScripter</h1>
+<p>GimpScripter is an authoring tool for Gimp plugins.  It is point-and-click.  It lets non-programmers author plugins.  You DO need to understand Gimp and the Gimp Programmer's Data Base (PDB.)  Gimpscripter itself is a Gimp plugin.</p>
+<p>It succeeds the earlier plugin called &quot;Make Shortcut&quot;.  It lets a shortcut call a sequence of procedures, instead of just one.</p>
+<p>GimpScripter is open source software written in the Python language.  It generates a plugin in the Python language.  But you don't need to understand Python to use GimpScripter.</p>
+<p>GimpScripter is a prototype or beta version.  It works, but has rough edges.</p>
+</div>
+<div class="section" id="quick-start">
+<h1>Quick Start</h1>
+<p>Start Gimp and choose &quot;Filters/Gimpscripter...&quot;.  A new window opens, having three panes.</p>
+<p>The left pane is a mockup of a cascading menu.  Manipulate the menu until you see a terminal menu item.  Click on the menu item.  That puts the menu item, representing a command, into the middle pane.  The middle pane is a list (sequence) of the commands you have chosen.</p>
+<p>The right pane shows you the parameters or settings of the command.  For now, don't change the settings.</p>
+<p>Enter a name, for example &quot;Foo&quot;, in the textbox labeled &quot;Shortcut name&quot;.</p>
+<p>Choose the OK button.  The window closes and an informational dialog opens to show a summary of the plugin you have created.  Choose the OK button.</p>
+<p>Now close Gimp and restart it.  You will see a new menu called &quot;Shortcuts&quot; with item &quot;Foo.&quot;  That is the plugin you just created.</p>
+<p>Open an image and choose &quot;Shortcuts/Foo&quot;.  You won't see any dialog since in the settings pane you left all parameters as constants to your plugin.  But your plugin &quot;Foo&quot; should perform the command you chose earlier.  You might not be able to see the results, depending on the command you chose.</p>
+<p>In general, you would choose a sequence of many commands, and change settings for commands, before choosing OK to create a shortcut.</p>
+</div>
+<div class="section" id="why-gimpscripter">
+<h1>Why GimpScripter?</h1>
+<p>It lets you:</p>
+<ul class="simple">
+<li>automate common sequences of Gimp operations</li>
+<li>package a sequence so you can call it from a batch processor</li>
+<li>simplify plugins by making some of their parameters constants</li>
+<li>alias plugins, giving them a more memorable name</li>
+</ul>
+</div>
+<div class="section" id="terminology">
+<h1>Terminology</h1>
+<p>Wrapper: the plugin you author using GimpScripter.</p>
+<p>Commands: procedures in a sequence.  They can be:</p>
+<ul class="simple">
+<li>plugins</li>
+<li>Gimp internal procedures</li>
+<li>macros.</li>
+</ul>
+<p>Plugins and internal procedures are defined in the PDB.  Macros are defined within GimpScripter.  Macros are sequences of calls to the PDB.</p>
+<p>You: the author, a user of GimpScripter</p>
+<p>The user: someone using the wrapper you create with GimpScripter</p>
+<p>Mock menu: the menu on the &quot;Menu&quot; pane.  It resembles the Gimp menus.</p>
+<p>Runtime: when the user choses your wrapper from Gimp.</p>
+<p>PDB: the Gimp Programmers Data Base.</p>
+</div>
+<div class="section" id="choosing-a-sequence">
+<h1>Choosing a Sequence</h1>
+<p>You click on a cascading menu on the left.  When you click on a command, it is appended to the sequence shown in the middle pane and its parameters are shown in the right pane.  You can enter the parameters when you first choose a command, or later.</p>
+<p>(For now, there is no &quot;Remove&quot;, you just start over.  There is also no &quot;Insert&quot;: a new command is always appended at the end.)</p>
+<p>Mouseover or hover (tooltips) on a menu item shows you the 'blurb' or description of the command.</p>
+</div>
+<div class="section" id="using-the-settings-pane">
+<h1>Using the Settings Pane</h1>
+<p>The settings shown in the right pane are for one command, the command that is selected in either the left pane (the mock menu) or in the middle pane (the command sequence.)</p>
+<p>When you first choose a command, you see its settings in the right pane.  You can change the settings then, or revisit them later.</p>
+<p>(Future: if the command is a plugin, you can choose to ignore the settings and run the plugin with its most recent values at runtime.)</p>
+<div class="section" id="revisiting-settings">
+<h2>Revisiting Settings</h2>
+<p>To revisit settings for a command, select the command in the middle pane.  The command's settings will appear in the right pane, with any values you entered earlier.  You don't need to &quot;Save&quot; any settings you change.  Whenever you revisit, you will see any changes you made earlier.</p>
+</div>
+<div class="section" id="validity-checking">
+<h2>Validity Checking</h2>
+<p>Gimpscripter understands the valid type (for example, integer) for settings, and checks them as you enter them.  But Gimpscripter does NOT understand the valid ranges for settings (for example, the smallest and largest acceptable values). Unfortunately, those valid ranges are not readily accessible from the PDB.</p>
+</div>
+<div class="section" id="initial-values-for-settings">
+<h2>Initial Values For Settings</h2>
+<p>When you first see settings for a command, the initial values are arbitrary values.  The arbitrary initial values are valid for the type of each setting.  But they are NOT what you might know as the default values for the settings.  Unfortunately, those default values are not readily accessible from the PDB.</p>
+</div>
+<div class="section" id="constant-settings">
+<h2>Constant Settings</h2>
+<p>All settings start as &quot;constants.&quot; The value you enter will be the value used at runtime and the user won't have a choice.</p>
+</div>
+<div class="section" id="deferred-settings">
+<h2>Deferred Settings</h2>
+<p>When you uncheck the &quot;Constant&quot; checkbox, you 'defer' a setting: the user will be able to change the setting at runtime, in a dialog as the wrapper starts.  The value you enter will be what the user sees as the default in the dialog.  All settings you defer will appear together in a single dialog at runtime, for the user to change.</p>
+</div>
+<div class="section" id="hidden-settings">
+<h2>Hidden Settings</h2>
+<p>Most commands have implied operands: the active image, layer, channel, or path.  See &quot;The Stack.&quot;  These operands (parameters) are defined in the PDB but GimpScript hides them from you, the GimpScripter author, and hides them from a user.</p>
+<p>Note that hidden settings are images, layers, or channels, but not all settings that are images, layers, or channels are hidden: any parameter of a PDB procedure that is of type image, layer, or channel and that is the second parameter of that type in the procedure, is NOT hidden.</p>
+</div>
+</div>
+<div class="section" id="the-stack">
+<h1>The Stack</h1>
+<p>GimpScripter uses a stack model of computation.  Each command operates on active objects, that is, the top of a set of stacks.  A command that creates an object makes it active (pushes it onto a stack.)  A command that removes an object makes a new object active, the object that was previously active.  In other words, it pops a stack.  When you choose a sequence of commands, you must consider how they will work together on a set of stacks.</p>
+<p>There are separate stacks for images, drawable, layers, and channels.  The top of the stack of drawables is either a layer or a channel, whatever was most recently created.</p>
+<p>GimpScripter hides the parameters (settings) of commands that read or affect the stacks.  That is, you won't see those parameters on the &quot;Settings&quot; pane.</p>
+<p>When a wrapper starts, the active image and drawable in Gimp are on the GimpScripter stacks.  (For now, you can't create a wrapper that doesn't require an open image.)</p>
+<p>When a wrapper ends, it may have changed the active image and drawable that Gimp considers active.  The top of the GimpScripter stacks will be active.  You might need to include delete or remove commands in your wrapper sequence.</p>
+</div>
+<div class="section" id="macros">
+<h1>Macros</h1>
+<p>Some commands that you can choose from the mock menus are macros implemented in GimpScripter.  A macro is a sequence of PDB procedure calls.  These macros simplify common but confusing sequences of PDB calls.  For example, &quot;Channel/New&quot; calls a macro that creates a channel and adds it to the image (which is almost always what you want.)  Just be aware that some items in the mock menu do not directly map to a PDB procedure you might be familiar with (but likely to map to a Gimp menu item you might be familiar with.) The tooltips will alert you to which are macros.  For more information, see the comments in the file gimpscripter/macros.py.</p>
+<p>You can write your own macros.  See the macros.py file for details.  Any macros you write get expanded into wrappers you create, so you don't need to distribute your macro definitions.  (More macros are needed for future GimpScripter distributions.)</p>
+</div>
+<div class="section" id="the-context">
+<h1>The Context</h1>
+<p>The Gimp context (the active color, brush, pattern, etc.) is NOT part of the GimpScripter stacks.  If you change the context, those are not stacked by GimpScripter.  You can manage the context by putting commands &quot;Context/Save&quot; and &quot;Context/Restore&quot; in your wrapper sequence.</p>
+</div>
+<div class="section" id="practical-sequencing-using-stacks">
+<h1>Practical Sequencing Using Stacks</h1>
+<p>You can use named buffers to reshuffle the stack, that is, to get a different object on top of a stack without losing anything on the stack.  See the &quot;Edit&quot; commands.</p>
+</div>
+<div class="section" id="about-this-document">
+<h1>About this Document</h1>
+<p>The original of this document is in the restructured text format (ReST).  The HTML format is generated by invoking &quot;rst2html UserManual.txt UserManual.html&quot;.</p>
+</div>
+</div>
+</body>
+</html>

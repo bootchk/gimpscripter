@@ -1,0 +1,23 @@
+Announcing a new version of the "Make Shortcut" plugin, now called "GimpScripter".  It lets you point-and-click create a plugin that calls a sequence of plugins, PDB procedures, or macros.  It is a plugin authoring tool.
+
+Gimpscripter is a Gimp plugin written in Python.  It generates Python code for a plugin.
+
+The source is at github.com/bootchk/gimpscripter.  Installation instruction are in the README file.  The source includes many readable documents such as NEWS, TODO, and a usermanual.
+
+Gimpscripter is still in development.  It works usually, but is incomplete and could be improved.
+
+Take a look if you are interested in scripting Gimp, as a user or as a programmer.
+
+Gimpscripter lets you visually (graphically, point-and-click) implement a sequential recipe, for example "Choose this, set that parameter, choose that, ..".  It doesn't have any control flow statements.  
+
+It uses a stack model: it hides a prefix of parameters and references them to active objects.
+
+It includes a macro facility and macros for common sequences of operations, and to wrap certain PDB procedures with higher-level parameter type, e.g. PF_BRUSH instead of PF_STRING for a brush.
+
+Some people suggest using a recorder/playback tool to automate Gimp.  Scripts from such tools break when the Gimp GUI changes, and the scripts are not easily distributable.  Gimpscripter is an alternative.
+
+Gimpscripter does have many weaknesses, some of which can be attributed to lack of support from the PDB.  So it could help guide improvements to the PDB (but it might not raise any issues not already known, such as not storing defaults.)
+
+I would welcome comments or contributions.
+
+

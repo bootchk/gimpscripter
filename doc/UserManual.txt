@@ -1,0 +1,163 @@
+GimpScripter User's Manual
+==========================
+
+Copyright 2010, 2011 Lloyd Konneker.
+This is part of the GimpScripter User's Manual.
+It is licensed under the GNU Free Documentation License, Version 1.3, 3 November 2008.
+See the file COPYING for copying conditions.
+
+About GimpScripter
+------------------
+
+GimpScripter is an authoring tool for Gimp plugins.  It is point-and-click.  It lets non-programmers author plugins.  You DO need to understand Gimp and the Gimp Programmer's Data Base (PDB.)  Gimpscripter itself is a Gimp plugin.
+
+It succeeds the earlier plugin called "Make Shortcut".  It lets a shortcut call a sequence of procedures, instead of just one. 
+
+GimpScripter is open source software written in the Python language.  It generates a plugin in the Python language.  But you don't need to understand Python to use GimpScripter.
+
+GimpScripter is a prototype or beta version.  It works, but has rough edges.
+
+
+Quick Start
+-----------
+
+Start Gimp and choose "Filters/Gimpscripter...".  A new window opens, having three panes.  
+
+The left pane is a mockup of a cascading menu.  Manipulate the menu until you see a terminal menu item.  Click on the menu item.  That puts the menu item, representing a command, into the middle pane.  The middle pane is a list (sequence) of the commands you have chosen.
+
+The right pane shows you the parameters or settings of the command.  For now, don't change the settings.
+
+Enter a name, for example "Foo", in the textbox labeled "Shortcut name".
+
+Choose the OK button.  The window closes and an informational dialog opens to show a summary of the plugin you have created.  Choose the OK button.
+
+Now close Gimp and restart it.  You will see a new menu called "Shortcuts" with item "Foo."  That is the plugin you just created.
+
+Open an image and choose "Shortcuts/Foo".  You won't see any dialog since in the settings pane you left all parameters as constants to your plugin.  But your plugin "Foo" should perform the command you chose earlier.  You might not be able to see the results, depending on the command you chose.
+
+In general, you would choose a sequence of many commands, and change settings for commands, before choosing OK to create a shortcut.
+
+Why GimpScripter?
+-----------------
+
+It lets you:
+
+- automate common sequences of Gimp operations
+- package a sequence so you can call it from a batch processor
+- simplify plugins by making some of their parameters constants
+- alias plugins, giving them a more memorable name
+
+Terminology
+-----------
+
+Wrapper: the plugin you author using GimpScripter.  
+
+Commands: procedures in a sequence.  They can be:
+
+- plugins 
+- Gimp internal procedures
+- macros.
+
+Plugins and internal procedures are defined in the PDB.  Macros are defined within GimpScripter.  Macros are sequences of calls to the PDB.
+
+You: the author, a user of GimpScripter
+
+The user: someone using the wrapper you create with GimpScripter
+
+Mock menu: the menu on the "Menu" pane.  It resembles the Gimp menus.
+
+Runtime: when the user choses your wrapper from Gimp.
+
+PDB: the Gimp Programmers Data Base.
+
+Choosing a Sequence
+-------------------
+
+You click on a cascading menu on the left.  When you click on a command, it is appended to the sequence shown in the middle pane and its parameters are shown in the right pane.  You can enter the parameters when you first choose a command, or later.
+
+(For now, there is no "Remove", you just start over.  There is also no "Insert": a new command is always appended at the end.)
+
+Mouseover or hover (tooltips) on a menu item shows you the 'blurb' or description of the command.
+
+Using the Settings Pane
+-----------------------
+
+The settings shown in the right pane are for one command, the command that is selected in either the left pane (the mock menu) or in the middle pane (the command sequence.) 
+
+When you first choose a command, you see its settings in the right pane.  You can change the settings then, or revisit them later.
+
+(Future: if the command is a plugin, you can choose to ignore the settings and run the plugin with its most recent values at runtime.)
+
+Revisiting Settings
++++++++++++++++++++
+
+To revisit settings for a command, select the command in the middle pane.  The command's settings will appear in the right pane, with any values you entered earlier.  You don't need to "Save" any settings you change.  Whenever you revisit, you will see any changes you made earlier.
+
+Validity Checking
++++++++++++++++++
+
+Gimpscripter understands the valid type (for example, integer) for settings, and checks them as you enter them.  But Gimpscripter does NOT understand the valid ranges for settings (for example, the smallest and largest acceptable values). Unfortunately, those valid ranges are not readily accessible from the PDB.
+
+Initial Values For Settings
++++++++++++++++++++++++++++
+
+When you first see settings for a command, the initial values are arbitrary values.  The arbitrary initial values are valid for the type of each setting.  But they are NOT what you might know as the default values for the settings.  Unfortunately, those default values are not readily accessible from the PDB.
+
+Constant Settings
++++++++++++++++++
+
+All settings start as "constants." The value you enter will be the value used at runtime and the user won't have a choice.
+
+Deferred Settings
++++++++++++++++++
+
+When you uncheck the "Constant" checkbox, you 'defer' a setting: the user will be able to change the setting at runtime, in a dialog as the wrapper starts.  The value you enter will be what the user sees as the default in the dialog.  All settings you defer will appear together in a single dialog at runtime, for the user to change.
+
+Hidden Settings
++++++++++++++++
+
+Most commands have implied operands: the active image, layer, channel, or path.  See "The Stack."  These operands (parameters) are defined in the PDB but GimpScript hides them from you, the GimpScripter author, and hides them from a user.
+
+Note that hidden settings are images, layers, or channels, but not all settings that are images, layers, or channels are hidden: any parameter of a PDB procedure that is of type image, layer, or channel and that is the second parameter of that type in the procedure, is NOT hidden.
+
+The Stack
+---------
+
+GimpScripter uses a stack model of computation.  Each command operates on active objects, that is, the top of a set of stacks.  A command that creates an object makes it active (pushes it onto a stack.)  A command that removes an object makes a new object active, the object that was previously active.  In other words, it pops a stack.  When you choose a sequence of commands, you must consider how they will work together on a set of stacks.
+
+There are separate stacks for images, drawable, layers, and channels.  The top of the stack of drawables is either a layer or a channel, whatever was most recently created.
+
+GimpScripter hides the parameters (settings) of commands that read or affect the stacks.  That is, you won't see those parameters on the "Settings" pane.
+
+When a wrapper starts, the active image and drawable in Gimp are on the GimpScripter stacks.  (For now, you can't create a wrapper that doesn't require an open image.)
+
+When a wrapper ends, it may have changed the active image and drawable that Gimp considers active.  The top of the GimpScripter stacks will be active.  You might need to include delete or remove commands in your wrapper sequence.
+
+
+Macros
+------
+
+Some commands that you can choose from the mock menus are macros implemented in GimpScripter.  A macro is a sequence of PDB procedure calls.  These macros simplify common but confusing sequences of PDB calls.  For example, "Channel/New" calls a macro that creates a channel and adds it to the image (which is almost always what you want.)  Just be aware that some items in the mock menu do not directly map to a PDB procedure you might be familiar with (but likely to map to a Gimp menu item you might be familiar with.) The tooltips will alert you to which are macros.  For more information, see the comments in the file gimpscripter/macros.py.
+
+You can write your own macros.  See the macros.py file for details.  Any macros you write get expanded into wrappers you create, so you don't need to distribute your macro definitions.  (More macros are needed for future GimpScripter distributions.)
+
+The Context
+-----------
+
+The Gimp context (the active color, brush, pattern, etc.) is NOT part of the GimpScripter stacks.  If you change the context, those are not stacked by GimpScripter.  You can manage the context by putting commands "Context/Save" and "Context/Restore" in your wrapper sequence.
+
+Practical Sequencing Using Stacks
+---------------------------------
+
+You can use named buffers to reshuffle the stack, that is, to get a different object on top of a stack without losing anything on the stack.  See the "Edit" commands.
+
+About this Document
+-------------------
+
+The original of this document is in the restructured text format (ReST).  The HTML format is generated by invoking "rst2html UserManual.txt UserManual.html".
+
+
+
+
+
+
